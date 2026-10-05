@@ -1,0 +1,10 @@
+{
+  "name": "MOLAR 360 · Clínica Odontológica",
+  "short_name": "MOLAR 360",
+  "lang": "es-PE",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f4ef",
+  "theme_color": "#123d43",
+  "icons": [{ "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5f4ef"/><stop offset="1" stop-color="#dce9e1"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="970" cy="95" r="320" fill="none" stroke="#8cbfb2" stroke-opacity=".55"/>
+  <circle cx="970" cy="95" r="250" fill="none" stroke="#123d43" stroke-opacity=".14"/>
+  <text x="96" y="245" fill="#102f33" font-family="Arial,sans-serif" font-size="32" letter-spacing="7">CLÍNICA ODONTOLÓGICA</text>
+  <text x="90" y="365" fill="#123d43" font-family="Georgia,serif" font-size="106">MOLAR 360</text>
+  <text x="96" y="435" fill="#526360" font-family="Arial,sans-serif" font-size="29">Imagen temporal · reemplazar por fotografía y logo oficiales</text>
+</svg>

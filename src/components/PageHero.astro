@@ -1,0 +1,17 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+interface Props { title: string; description: string; aside?: string; breadcrumb: { label: string; href?: string }[] }
+const { title, description, aside, breadcrumb } = Astro.props as Props;
+---
+
+<Breadcrumbs items={breadcrumb} />
+<section class="page-hero">
+  <div class="page-hero__inner wrap">
+    <div>
+      <p class="eyebrow">MOLAR 360 · Clínica Odontológica</p>
+      <h1>{title}</h1>
+      <p class="page-hero__copy">{description}</p>
+    </div>
+    {aside && <aside class="page-hero__aside"><strong>Información pública</strong>{aside}</aside>}
+  </div>
+</section>

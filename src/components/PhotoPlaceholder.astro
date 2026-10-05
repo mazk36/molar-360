@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string;
+  filename: string;
+  aspect: string;
+  resolution: string;
+  description: string;
+  variant?: 'hero' | 'portrait' | 'wide' | 'social';
+}
+const { label, filename, aspect, resolution, description, variant = 'wide' } = Astro.props;
+---
+
+<figure class={`photo-placeholder photo-placeholder--${variant}`} aria-label={`Fotografía pendiente: ${label}`}>
+  <div class="photo-placeholder__art" aria-hidden="true">
+    <span class="photo-placeholder__monogram">M<span>360</span></span>
+    <span class="photo-placeholder__rule"></span>
+    <span class="photo-placeholder__caption">Fotografía real pendiente</span>
+  </div>
+  <figcaption class="photo-placeholder__spec">
+    <strong>PHOTO_REQUIRED · {filename}</strong>
+    <span>{label} · {aspect} · {resolution}</span>
+    <span>{description}</span>
+  </figcaption>
+</figure>

@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+import { clinic } from '../data/clinic';
+---
+
+<SiteLayout title="Servicios odontológicos | MOLAR 360" description="Consulta con MOLAR 360 qué atenciones odontológicas están disponibles. El listado de tratamientos se publicará cuando la clínica lo confirme." path="/servicios/">
+  <PageHero
+    title="Servicios y atención odontológica."
+    description="Consulta directamente con los profesionales de MOLAR 360 sobre las atenciones disponibles y acuerda una evaluación según tus necesidades."
+    aside="No se crean páginas de tratamientos hasta recibir una lista confirmada por la clínica."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Servicios' }]}
+  />
+  <section class="section section--surface">
+    <div class="wrap">
+      <div class="empty-service">
+        <span class="empty-service__mark" aria-hidden="true">+</span>
+        <h2>El listado de tratamientos está pendiente de confirmación.</h2>
+        <p>Los canales oficiales consultados no detallan tratamientos específicos. Para evitar información incorrecta, aquí no se muestran servicios que la clínica no haya confirmado.</p>
+        <p>Escríbenos para preguntar qué atenciones están disponibles. El odontólogo podrá orientarte después de una evaluación clínica; cada caso requiere valoración profesional.</p>
+        <a class="button button--dark" href={clinic.professionals[0].waLink} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click">Consultar por WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+  <CTA title="¿Buscas información sobre un tratamiento?" text="Pregunta al equipo de MOLAR 360 qué atenciones están disponibles y cómo coordinar una evaluación." />
+</SiteLayout>

@@ -1,0 +1,25 @@
+---
+import PhotoPlaceholder from './PhotoPlaceholder.astro';
+import { clinic, sitePath } from '../data/clinic';
+---
+
+<div class="team-grid">
+  {clinic.professionals.map((person) => (
+    <article class="team-card">
+      <PhotoPlaceholder
+        label={`Retrato profesional de ${person.displayName}`}
+        filename={`doctor-${person.slug}.webp`}
+        aspect="4:5"
+        resolution="1200 × 1500 px"
+        description={`Retrato real de ${person.displayName} en el consultorio o con fondo neutro.`}
+        variant="portrait"
+      />
+      <div class="team-card__body">
+        <span class="team-tag">Profesional de MOLAR 360</span>
+        <h3>{person.displayName}</h3>
+        <p>Información profesional adicional pendiente de confirmación.</p>
+        <a class="text-link" href={sitePath(person.page)}>Ver perfil <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  ))}
+</div>

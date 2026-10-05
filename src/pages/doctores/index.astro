@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import TeamCards from '../../components/TeamCards.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<SiteLayout title="Profesionales | MOLAR 360 Clínica Odontológica" description="Conoce a la Dra. Marleny de la Cruz y al Dr. Richar Flores Curo, profesionales vinculados a MOLAR 360." path="/doctores/">
+  <PageHero
+    title="Profesionales de MOLAR 360."
+    description="Estos son los nombres vinculados a los contactos oficiales que la clínica publica en Linktree."
+    aside="Especialidades, credenciales, formación y experiencia se añadirán cuando sean confirmadas."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Profesionales' }]}
+  />
+  <section class="section section--surface">
+    <div class="wrap"><TeamCards /></div>
+  </section>
+  <CTA title="Contacta al profesional que prefieras." text="Escribe directamente por WhatsApp para consultar disponibilidad y coordinar una cita." />
+</SiteLayout>

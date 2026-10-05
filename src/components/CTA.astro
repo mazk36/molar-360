@@ -1,0 +1,14 @@
+---
+import { clinic, sitePath } from '../data/clinic';
+const { title = '¿Tienes una consulta?', text = 'Escríbenos para solicitar información y coordinar el siguiente paso.', compact = false } = Astro.props;
+---
+
+<section class={`closing-cta ${compact ? 'closing-cta--compact' : ''}`} aria-labelledby="closing-title">
+  <div class="closing-cta__inner wrap">
+    <div><p class="eyebrow eyebrow--light">MOLAR 360 · CLÍNICA ODONTOLÓGICA</p><h2 id="closing-title">{title}</h2><p class="closing-cta__copy">{text}</p></div>
+    <div class="closing-cta__actions">
+      <a class="button button--light" href={clinic.professionals[0].waLink} target="_blank" rel="noopener noreferrer" data-event="appointment_cta">Agendar por WhatsApp <span aria-hidden="true">↗</span></a>
+      <a class="text-link text-link--light" href={sitePath('/ubicacion/')}>Ver ubicación <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

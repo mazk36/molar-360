@@ -1,0 +1,18 @@
+---
+const steps = [
+  { title: 'Escríbenos', text: 'Cuéntanos que deseas solicitar una cita o resolver una consulta.' },
+  { title: 'Coordina tu visita', text: 'Consulta disponibilidad y confirma los detalles directamente con el equipo.' },
+  { title: 'Visita la clínica', text: 'Usa el enlace de ubicación compartido por MOLAR 360 para planear tu llegada.' },
+  { title: 'Conversa sobre tu atención', text: 'El profesional podrá orientarte después de conocer tu caso en una evaluación clínica.' },
+];
+---
+
+<div class="steps-grid">
+  {steps.map((step, index) => (
+    <article class="step">
+      <span class="step__number">0{index + 1}</span>
+      <h3>{step.title}</h3>
+      <p>{step.text}</p>
+    </article>
+  ))}
+</div>

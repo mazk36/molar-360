@@ -1,0 +1,20 @@
+{
+  "name": "molar-360-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=18.20.8" },
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.14.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

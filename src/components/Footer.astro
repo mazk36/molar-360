@@ -1,0 +1,41 @@
+---
+import { clinic, sitePath } from '../data/clinic';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-main wrap">
+    <div class="footer-brand">
+      <a class="wordmark wordmark--footer" href={sitePath('/')}>
+        <span class="wordmark__name">MOLAR <b>360</b></span>
+        <span class="wordmark__descriptor">CLÍNICA ODONTOLÓGICA</span>
+      </a>
+      <p>Información clara para dar el siguiente paso en tu atención odontológica.</p>
+    </div>
+    <div class="footer-links">
+      <h2>Explora</h2>
+      <a href={sitePath('/servicios/')}>Servicios</a>
+      <a href={sitePath('/nosotros/')}>Nosotros</a>
+      <a href={sitePath('/doctores/')}>Profesionales</a>
+      <a href={sitePath('/preguntas-frecuentes/')}>Preguntas frecuentes</a>
+      <a href={sitePath('/ubicacion/')}>Ubicación</a>
+      <a href={sitePath('/contacto/')}>Contacto</a>
+      <a href={sitePath('/privacidad/')}>Privacidad</a>
+    </div>
+    <div class="footer-links footer-contact">
+      <h2>Contacto oficial</h2>
+      {clinic.professionals.map((person) => (
+        <Fragment>
+          <a href={person.waLink} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click">WhatsApp · {person.displayName}</a>
+          <a href={`tel:+${person.waNumber}`} data-event="call_click">Llamar · {person.phone}</a>
+        </Fragment>
+      ))}
+      <a href={clinic.mapsUrl} target="_blank" rel="noopener noreferrer" data-event="maps_click">Ver ubicación en Google Maps ↗</a>
+      <a href={clinic.facebookUrl} target="_blank" rel="noopener noreferrer" data-event="facebook_click">Facebook ↗</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    <span>© {year} MOLAR 360</span>
+    <span>Huella digital oficial · <a href={clinic.linktreeUrl} target="_blank" rel="noopener noreferrer">Linktree ↗</a></span>
+  </div>
+</footer>

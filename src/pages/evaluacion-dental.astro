@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Steps from '../components/Steps.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<SiteLayout title="Evaluación dental y citas | MOLAR 360" description="Conoce cómo solicitar información y coordinar una cita para conversar sobre tu atención odontológica en MOLAR 360." path="/evaluacion-dental/">
+  <PageHero
+    title="Empieza con una conversación sobre tu atención."
+    description="Escribe al equipo de MOLAR 360 para consultar disponibilidad y coordinar una visita. La orientación clínica requiere una evaluación profesional."
+    aside="No se anuncia una evaluación gratuita ni se ofrecen diagnósticos en línea."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Evaluación dental' }]}
+  />
+  <section class="section section--surface">
+    <div class="wrap">
+      <div class="section-heading"><p class="eyebrow">Cómo coordinar</p><h2>Cuatro pasos para avanzar con calma.</h2><p>Recibe detalles de disponibilidad y ubicación antes de acudir.</p></div>
+      <Steps />
+    </div>
+  </section>
+  <section class="section section--soft">
+    <div class="wrap split-section">
+      <div class="split-section__copy">
+        <p class="eyebrow">Antes de tu visita</p>
+        <h2>Confirma los detalles directamente.</h2>
+        <p>Los horarios y la dirección escrita no aparecen en la información oficial revisada. Pregunta al equipo por WhatsApp para confirmar disponibilidad, dirección y cualquier detalle que necesites.</p>
+        <p>Una conversación en línea no sustituye una evaluación clínica ni permite determinar un tratamiento.</p>
+      </div>
+      <div class="pending-note"><strong>Información por confirmar</strong>Horario · Dirección escrita · Tratamientos disponibles</div>
+    </div>
+  </section>
+  <CTA title="¿Quieres coordinar una cita?" text="Escríbenos por WhatsApp y conversa directamente con un profesional de MOLAR 360." />
+</SiteLayout>

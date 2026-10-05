@@ -1,0 +1,139 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PhotoPlaceholder from '../components/PhotoPlaceholder.astro';
+import TeamCards from '../components/TeamCards.astro';
+import Steps from '../components/Steps.astro';
+import FAQList from '../components/FAQList.astro';
+import CTA from '../components/CTA.astro';
+import { clinic, sitePath } from '../data/clinic';
+---
+
+<SiteLayout
+  title="MOLAR 360 | Clínica Odontológica"
+  description="Conoce MOLAR 360, a sus profesionales y cómo solicitar información para coordinar una cita odontológica por WhatsApp."
+  path="/"
+>
+  <section class="home-hero">
+    <div class="home-hero__grid wrap">
+      <div class="home-hero__copy">
+        <p class="eyebrow">MOLAR 360 · Clínica Odontológica</p>
+        <h1>Atención odontológica personalizada.</h1>
+        <p>Conoce a los profesionales de MOLAR 360 y conversa directamente con ellos para solicitar información o coordinar una cita.</p>
+        <div class="hero-actions">
+          <a class="button button--dark" href={clinic.professionals[0].waLink} target="_blank" rel="noopener noreferrer" data-event="appointment_cta">Agendar cita por WhatsApp <span aria-hidden="true">↗</span></a>
+          <a class="button button--outline" href={sitePath('/ubicacion/')}>Cómo llegar <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-note">Dos profesionales identificados en los canales oficiales de la clínica.</div>
+      </div>
+      <div class="home-hero__visual">
+        <span class="hero-orbit" aria-hidden="true"></span>
+        <span class="hero-orbit hero-orbit--second" aria-hidden="true"></span>
+        <PhotoPlaceholder
+          label="Hero principal · atención en MOLAR 360"
+          filename="hero-molar360.webp"
+          aspect="4:5"
+          resolution="1600 × 2000 px"
+          description="Fotografía real de un profesional de MOLAR 360 conversando con un paciente en la clínica."
+          variant="hero"
+        />
+      </div>
+    </div>
+    <div class="hero-bottomline wrap"><span>Información oficial · Contacto directo · Atención odontológica</span></div>
+  </section>
+
+  <section class="trust-strip" aria-label="Información de MOLAR 360">
+    <div class="trust-strip__inner wrap">
+      <div class="trust-item"><span class="trust-item__index">01</span><div><strong>Equipo identificado</strong><span>Dra. Marleny y Dr. Richar</span></div></div>
+      <div class="trust-item"><span class="trust-item__index">02</span><div><strong>Contacto directo</strong><span>WhatsApp oficial de cada profesional</span></div></div>
+      <div class="trust-item"><span class="trust-item__index">03</span><div><strong>Ubicación en Maps</strong><span>Pin compartido por la clínica</span></div></div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="split-section wrap">
+      <div class="split-section__copy">
+        <p class="eyebrow">Conoce MOLAR 360</p>
+        <h2>Un primer paso empieza con información clara.</h2>
+        <p>MOLAR 360 es una clínica odontológica con dos profesionales identificados públicamente. Puedes contactarlos para consultar disponibilidad, hacer preguntas y coordinar una visita.</p>
+        <p>La información sobre tratamientos, horarios y dirección escrita se añadirá cuando la clínica la confirme.</p>
+        <a class="text-link" href={sitePath('/nosotros/')}>Conocer la clínica <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="quiet-panel">
+        <p class="section-kicker">MOLAR 360 · CLÍNICA ODONTOLÓGICA</p>
+        <h3>Atención conversada directamente con el profesional.</h3>
+        <p>Escribe por WhatsApp para consultar qué atenciones están disponibles y acordar los detalles de tu visita.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Servicios</p>
+        <h2>Consulta sobre las atenciones disponibles.</h2>
+        <p>La clínica aún no publica un listado confirmado de tratamientos. Pregunta directamente al equipo para recibir información precisa.</p>
+      </div>
+      <div class="empty-service">
+        <span class="empty-service__mark" aria-hidden="true">+</span>
+        <h3>Información de tratamientos pendiente de confirmación</h3>
+        <p>No mostramos tratamientos que no estén confirmados por MOLAR 360. El profesional podrá explicarte las opciones después de una evaluación clínica, según tu caso.</p>
+        <a class="button button--dark" href={sitePath('/servicios/')}>Ver información de servicios <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Profesionales</p>
+        <h2>Conoce al equipo de MOLAR 360.</h2>
+        <p>Estos son los profesionales que aparecen en los canales oficiales de la clínica.</p>
+      </div>
+      <TeamCards />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Cómo empezar</p>
+        <h2>Cuatro pasos para coordinar tu visita.</h2>
+        <p>Consulta disponibilidad directamente y recibe orientación en persona con el profesional.</p>
+      </div>
+      <Steps />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="wrap split-section">
+      <div class="split-section__copy">
+        <p class="eyebrow">Ubicación compartida</p>
+        <h2>Encuentra el pin de MOLAR 360 en Google Maps.</h2>
+        <p>Abre el mapa para consultar el punto compartido por la clínica. La dirección escrita y las referencias de llegada están pendientes de confirmación.</p>
+        <a class="button button--outline" href={clinic.mapsUrl} target="_blank" rel="noopener noreferrer" data-event="maps_click">Abrir Google Maps <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="location-card">
+        <div>
+          <span class="contact-card__label">Ubicación oficial</span>
+          <h3>MOLAR 360 en Google Maps</h3>
+          <p>Pin enlazado desde el perfil oficial de Linktree.</p>
+          <div class="location-card__coordinates"><span>−12.091670</span><span>−75.202896</span></div>
+        </div>
+        <div class="map-art" aria-hidden="true"><span class="map-art__pin"><span>•</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Información útil antes de escribirnos.</h2>
+      </div>
+      <FAQList />
+      <div class="faq-more"><a class="text-link" href={sitePath('/preguntas-frecuentes/')}>Ver todas las preguntas <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <CTA title="Coordina una cita con MOLAR 360." text="Escríbenos por WhatsApp para consultar disponibilidad y conversar directamente con el equipo." />
+</SiteLayout>

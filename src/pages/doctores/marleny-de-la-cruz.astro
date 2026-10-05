@@ -1,0 +1,35 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import PhotoPlaceholder from '../../components/PhotoPlaceholder.astro';
+import CTA from '../../components/CTA.astro';
+import { clinic } from '../../data/clinic';
+const person = clinic.professionals[0];
+---
+
+<SiteLayout title="Dra. Marleny de la Cruz | MOLAR 360" description="Información y contacto oficial de la Dra. Marleny de la Cruz, profesional vinculada a MOLAR 360." path={person.page}>
+  <PageHero
+    title={person.displayName}
+    description="Profesional vinculada a MOLAR 360 en los canales oficiales de la clínica."
+    aside="Otros datos profesionales no se han añadido porque aún no están confirmados."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Profesionales', href: '/doctores/' }, { label: person.displayName }]}
+  />
+  <section class="section section--surface">
+    <div class="profile-layout wrap">
+      <PhotoPlaceholder label="Retrato de la Dra. Marleny de la Cruz" filename="doctor-marleny-de-la-cruz.webp" aspect="4:5" resolution="1200 × 1500 px" description="Retrato profesional real de la Dra. Marleny de la Cruz, con autorización para publicación." variant="portrait" />
+      <div>
+        <p class="eyebrow">MOLAR 360 · Profesional</p>
+        <h2>Información disponible</h2>
+        <p>La Dra. Marleny de la Cruz aparece en el Linktree oficial de MOLAR 360 junto a un contacto directo de WhatsApp.</p>
+        <dl class="profile-facts">
+          <div><dt>Nombre</dt><dd>{person.displayName}</dd></div>
+          <div><dt>Vinculación</dt><dd>MOLAR 360 · Clínica Odontológica</dd></div>
+          <div><dt>Contacto</dt><dd><a href={person.waLink} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click">WhatsApp · {person.phone} ↗</a></dd></div>
+        </dl>
+        <p>La especialidad, la formación, las credenciales y la experiencia están pendientes de confirmación.</p>
+        <a class="button button--dark" href={person.waLink} target="_blank" rel="noopener noreferrer" data-event="appointment_cta">Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+  <CTA title="Solicita información directamente." text="Escribe a la Dra. Marleny de la Cruz por su WhatsApp oficial para consultar y coordinar una cita." />
+</SiteLayout>

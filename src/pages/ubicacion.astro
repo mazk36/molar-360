@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+import { clinic } from '../data/clinic';
+---
+
+<SiteLayout title="Ubicación y cómo llegar | MOLAR 360" description="Abre el pin de Google Maps compartido por MOLAR 360 y consulta las coordenadas verificadas de su ubicación." path="/ubicacion/">
+  <PageHero
+    title="Ubicación de MOLAR 360."
+    description="Consulta en Google Maps el punto enlazado desde el perfil oficial de la clínica."
+    aside="La dirección en texto, el distrito y las referencias de llegada no se han confirmado."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Ubicación' }]}
+  />
+  <section class="section section--surface">
+    <div class="wrap">
+      <div class="location-card">
+        <div>
+          <span class="contact-card__label">Pin de Google Maps</span>
+          <h2>Ubicación compartida por la clínica.</h2>
+          <p>Este enlace fue publicado en el Linktree de MOLAR 360 y conduce a las coordenadas indicadas abajo.</p>
+          <div class="location-card__coordinates"><span>Latitud: {clinic.coordinates.latitude.toFixed(6)}</span><span>Longitud: {clinic.coordinates.longitude.toFixed(6)}</span></div>
+          <div class="hero-actions" style="margin-top: 24px">
+            <a class="button button--dark" href={clinic.mapsUrl} target="_blank" rel="noopener noreferrer" data-event="maps_click">Cómo llegar en Google Maps <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="map-art" aria-hidden="true"><span class="map-art__pin"><span>•</span></span></div>
+      </div>
+      <div class="pending-note" style="max-width: 760px; margin-top: 22px"><strong>CLINIC_ADDRESS_PENDING</strong>La dirección escrita, el horario y las referencias de llegada deben confirmarse con MOLAR 360. Verifica estos datos antes de desplazarte.</div>
+    </div>
+  </section>
+  <CTA title="Confirma los detalles antes de tu visita." text="Escribe al equipo para consultar la dirección exacta y el horario de atención." />
+</SiteLayout>

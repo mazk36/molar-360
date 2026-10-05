@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { sitePath } from '../data/clinic';
+---
+<SiteLayout title="Página no encontrada | MOLAR 360" description="No encontramos esta página de MOLAR 360. Regresa al inicio o consulta las secciones del sitio." path="/404/">
+  <section class="page-hero"><div class="wrap"><p class="eyebrow">404 · MOLAR 360</p><h1>No encontramos esta página.</h1><p class="page-hero__copy">Revisa la dirección o vuelve al inicio para encontrar la información de la clínica.</p><a class="button button--dark" href={sitePath('/')} style="margin-top:24px">Ir al inicio <span aria-hidden="true">→</span></a></div></section>
+</SiteLayout>

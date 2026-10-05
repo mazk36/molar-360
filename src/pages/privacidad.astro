@@ -1,0 +1,24 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<SiteLayout title="Privacidad | MOLAR 360" description="Información provisional sobre privacidad y navegación en el sitio web de MOLAR 360, pendiente de revisión por la clínica." path="/privacidad/">
+  <PageHero
+    title="Privacidad y uso de este sitio."
+    description="Esta página informa sobre las funciones implementadas en la versión actual del sitio. El contenido requiere revisión de MOLAR 360 antes de una publicación definitiva."
+    aside="Aviso provisional · Requiere validación del responsable de la clínica."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Privacidad' }]}
+  />
+  <section class="section section--surface">
+    <article class="legal-copy wrap">
+      <div class="pending-note"><strong>Aviso pendiente de revisión</strong>La clínica debe confirmar quién es responsable del tratamiento de datos y proporcionar su política oficial antes de publicar una versión legal definitiva.</div>
+      <h2>Datos enviados desde el sitio</h2>
+      <p>Esta versión no contiene formularios, cuentas de usuario ni herramientas de analítica. Los botones de WhatsApp, Facebook y Google Maps abren servicios externos. Si los utilizas, esos servicios aplican sus propias condiciones y políticas de privacidad.</p>
+      <h2>Información clínica</h2>
+      <p>No envíes información médica sensible por medio de este sitio. Para consultas sobre privacidad y el canal más apropiado para comunicarse, contacta directamente con MOLAR 360.</p>
+      <h2>Revisión antes de publicación</h2>
+      <p>El responsable de la clínica debe revisar este aviso, confirmar cualquier tratamiento de datos que realice mediante los canales enlazados y proporcionar los datos de contacto necesarios para consultas relacionadas con privacidad.</p>
+    </article>
+  </section>
+</SiteLayout>

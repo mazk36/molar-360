@@ -1,0 +1,34 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import PhotoPlaceholder from '../components/PhotoPlaceholder.astro';
+import TeamCards from '../components/TeamCards.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<SiteLayout title="Nosotros | MOLAR 360 Clínica Odontológica" description="Conoce la información pública de MOLAR 360 y a los profesionales vinculados a su clínica odontológica." path="/nosotros/">
+  <PageHero
+    title="Conoce MOLAR 360."
+    description="Una clínica odontológica con información y contacto directo para que puedas consultar tus dudas y coordinar una visita."
+    aside="La clínica y los nombres de sus profesionales se verificaron en los canales oficiales enlazados desde Linktree."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Nosotros' }]}
+  />
+  <section class="section section--surface">
+    <div class="split-section wrap">
+      <div class="split-section__copy">
+        <p class="eyebrow">La clínica</p>
+        <h2>Información clara para conversar sobre tu atención.</h2>
+        <p>MOLAR 360 se identifica en sus canales oficiales como clínica odontológica. La información pública disponible permite confirmar el nombre de la clínica, sus profesionales, dos contactos de WhatsApp, una ubicación compartida en Google Maps y su página de Facebook.</p>
+        <p>Los detalles sobre horarios, tratamientos y dirección escrita se añadirán cuando la clínica los confirme.</p>
+      </div>
+      <PhotoPlaceholder label="Interior de MOLAR 360" filename="clinica-interior-molar360.webp" aspect="16:10" resolution="1600 × 1000 px" description="Fotografía real de un consultorio o espacio de atención de MOLAR 360, sin pacientes identificables." variant="wide" />
+    </div>
+  </section>
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="section-heading"><p class="eyebrow">Profesionales</p><h2>El equipo identificado en los canales oficiales.</h2><p>Los perfiles contienen solamente los datos disponibles y dejan el resto para confirmación directa.</p></div>
+      <TeamCards />
+    </div>
+  </section>
+  <CTA title="Conversa directamente con el equipo." text="Escríbenos para consultar información y coordinar tu visita a MOLAR 360." />
+</SiteLayout>

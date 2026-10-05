@@ -1,0 +1,60 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { absoluteUrl, clinic, HAS_CONFIRMED_DOMAIN, sitePath, structuredData } from '../data/clinic';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+}
+const { title, description, path, ogImage = '/images/molar360-social-placeholder.svg' } = Astro.props;
+const canonical = absoluteUrl(path);
+const imageUrl = absoluteUrl(ogImage);
+const robots = HAS_CONFIRMED_DOMAIN ? 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' : 'noindex,nofollow';
+const graph = structuredData({ path, title, description });
+const siteVerification = import.meta.env.PUBLIC_SEARCH_CONSOLE_VERIFICATION;
+---
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    {siteVerification && <meta name="google-site-verification" content={siteVerification} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={sitePath('/favicon.svg')} />
+    <link rel="manifest" href={sitePath('/site.webmanifest')} />
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content={`${clinic.name} · ${clinic.descriptor}`} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content="MOLAR 360 · Clínica Odontológica. Imagen provisional hasta recibir el logo y la fotografía oficiales." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+    <script is:inline>
+      document.addEventListener('click', (event) => {
+        const target = event.target instanceof Element ? event.target.closest('[data-event]') : null;
+        if (target && typeof window.gtag === 'function') {
+          window.gtag('event', target.dataset.event, { transport_type: 'beacon' });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main id="contenido"><slot /></main>
+    <Footer />
+  </body>
+</html>

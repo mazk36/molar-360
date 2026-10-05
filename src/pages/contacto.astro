@@ -1,0 +1,42 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+import { clinic } from '../data/clinic';
+---
+
+<SiteLayout title="Contacto | MOLAR 360 Clínica Odontológica" description="Contacta a la Dra. Marleny de la Cruz o al Dr. Richar Flores Curo por WhatsApp y consulta la ubicación oficial de MOLAR 360." path="/contacto/">
+  <PageHero
+    title="Contacta a MOLAR 360."
+    description="Elige el contacto de WhatsApp publicado junto a cada profesional en los canales oficiales de la clínica."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Contacto' }]}
+  />
+  <section class="section section--surface">
+    <div class="wrap">
+      <div class="contact-grid">
+        {clinic.professionals.map((person) => (
+          <article class="contact-card">
+            <span class="contact-card__label">WhatsApp oficial</span>
+            <h2>{person.displayName}</h2>
+            <p>Contacto enlazado desde el perfil de MOLAR 360 en Linktree.</p>
+            <a href={person.waLink} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click">Escribir por WhatsApp · {person.phone} ↗</a>
+            <p><a href={`tel:+${person.waNumber}`} data-event="call_click">Llamar a {person.displayName} ↗</a></p>
+          </article>
+        ))}
+        <article class="contact-card">
+          <span class="contact-card__label">Red social</span>
+          <h2>Facebook</h2>
+          <p>Enlace de Facebook publicado por MOLAR 360 en su Linktree.</p>
+          <a href={clinic.facebookUrl} target="_blank" rel="noopener noreferrer" data-event="facebook_click">Visitar Facebook ↗</a>
+        </article>
+        <article class="contact-card">
+          <span class="contact-card__label">Ubicación</span>
+          <h2>Google Maps</h2>
+          <p>Consulta el pin compartido por la clínica. Dirección escrita y horario pendientes de confirmación.</p>
+          <a href={clinic.mapsUrl} target="_blank" rel="noopener noreferrer" data-event="maps_click">Abrir Google Maps ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+  <CTA title="Escríbenos para coordinar." text="Indica si quieres solicitar una cita o consultar los detalles de tu visita." />
+</SiteLayout>

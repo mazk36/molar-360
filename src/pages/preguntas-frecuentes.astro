@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import FAQList from '../components/FAQList.astro';
+import CTA from '../components/CTA.astro';
+import { absoluteUrl, clinic } from '../data/clinic';
+import { faqItems } from '../data/faqs';
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${absoluteUrl('/preguntas-frecuentes/')}#faqpage`,
+  url: absoluteUrl('/preguntas-frecuentes/'),
+  name: `Preguntas frecuentes | ${clinic.name}`,
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+---
+
+<SiteLayout title="Preguntas frecuentes | MOLAR 360" description="Resuelve dudas sobre contactos, citas, ubicación y la información odontológica actualmente publicada por MOLAR 360." path="/preguntas-frecuentes/">
+  <PageHero
+    title="Antes de reservar, puedes preguntarnos."
+    description="Respuestas basadas en la información publicada por MOLAR 360. Los datos aún no confirmados se indican con claridad."
+    breadcrumb={[{ label: 'Inicio', href: '/' }, { label: 'Preguntas frecuentes' }]}
+  />
+  <section class="section section--surface">
+    <div class="wrap"><FAQList /></div>
+  </section>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <CTA title="¿No encontraste lo que buscabas?" text="Escríbenos por WhatsApp para consultar directamente con el equipo de MOLAR 360." />
+</SiteLayout>

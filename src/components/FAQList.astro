@@ -1,0 +1,13 @@
+---
+import { clinic } from '../data/clinic';
+import { faqItems } from '../data/faqs';
+---
+
+<div class="faq-list">
+  {faqItems.map((item, index) => (
+    <details open={index === 0}>
+      <summary>{item.question}</summary>
+      <p>{item.answer}</p>
+    </details>
+  ))}
+</div>
