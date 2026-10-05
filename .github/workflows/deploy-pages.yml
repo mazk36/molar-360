@@ -34,7 +34,7 @@ jobs:
       - name: Build static site
         run: pnpm build
         env:
-          PUBLIC_SITE_URL: https://mazk36.github.io
+          PUBLIC_SITE_URL: https://marcelojauregui.me
           PUBLIC_BASE_PATH: /molar-360/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
